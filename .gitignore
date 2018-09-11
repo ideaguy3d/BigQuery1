@@ -1,0 +1,12 @@
+/vendor/
+/logs/*
+!/logs/README.md
+.idea
+**/vendor
+**/settings.yml
+build/*
+config/settings.yml
+app.yaml
+.idea
+**/settings.php
+settings.php
