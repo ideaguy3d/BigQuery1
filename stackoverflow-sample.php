@@ -42,7 +42,7 @@ SELECT
 FROM `bigquery-public-data.stackoverflow.posts_questions`
 WHERE tags like '%google-bigquery%'
 ORDER BY view_count DESC
-LIMIT 10;
+LIMIT 10
 ENDSQL;
 $queryJobConfig = $bigQuery->query($query);
 $queryResults = $bigQuery->runQuery($queryJobConfig);

@@ -1,10 +1,17 @@
 <?php
+/**
+ * Created by PhpStorm.
+ * User: julius
+ * Date: 9/10/2018
+ * Time: 6:49 PM
+ */
 
 use Google\Cloud\BigQuery\BigQueryClient;
 
-
 require __DIR__ . '\vendor\autoload.php';
 require __DIR__ . '\config\info.php';
+
+echo "hello world"; 
 
 $bigQuery = new BigQueryClient([
     'projectId' => $argv[1]
@@ -14,7 +21,8 @@ $q = <<<NinjaSQL
 SELECT CONCAT(
       'https://stackoverflow.com/questions/',
       CAST(id AS STRING)
-    ) AS url
+    ) AS url,
+    view_count
 FROM `bigquery-public-data.stackoverflow.posts_questions`
 WHERE tags LIKE '%google-bigquery%'
 ORDER BY view_count DESC
